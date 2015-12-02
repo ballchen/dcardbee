@@ -1,8 +1,79 @@
 <html>
 	<head>
+		<base href="/">
 		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/loading.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script src="//connect.facebook.net/en_US/sdk.js"></script>
+
 	</head>
-	<body>
-		fuckyou
+	<body ng-app="FBAPP" ng-controller="MainCtrl">
+		<div class="deepspace">	
+			<img class="moon" src="img/event_bg_moon.png" alt="">
+			<img class="star" src="img/bg_star.svg" alt="">	
+			<img class="star" src="img/bg_star.svg" alt="">	
+			<img class="star" src="img/bg_star.svg" alt="">	
+			<img class="star circle" src="img/bg_star_circle.svg" alt="">	
+			<img class="star circle" src="img/bg_star_circle.svg" alt="">	
+			<img class="star circle" src="img/bg_star_circle.svg" alt="">	
+			<img class="star circle" src="img/bg_star_circle.svg" alt="">	
+		</div>
+		<div id="meteor-wrapper"></div>
+		<div ui-view class="view">
+			
+		</div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '527914474040018',
+		      xfbml      : true,
+		      version    : 'v2.5'
+		    });
+		 //    function onLogin(response) {
+			//   if (response.status == 'connected') {
+			//     FB.api('/me?fields=first_name', function(data) {
+			//       var welcomeBlock = document.getElementById('fb-welcome');
+			//       welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+			//     });
+			//   }
+			// }
+
+			// FB.getLoginStatus(function(response) {
+			//   // Check login status on load, and if the user is
+			//   // already logged in, go directly to the welcome message.
+			//   if (response.status == 'connected') {
+			//     onLogin(response);
+			//   } else {
+			//     // Otherwise, show Login dialog first.
+			//     FB.login(function(response) {
+			//       onLogin(response);
+			//     }, {scope: 'user_friends, email'});
+			//   }
+			// });
+
+
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		  };
+		  
+		  
+		</script>		
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+		<script src="js/meteor.js"></script>
+		<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+		<script src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+		<script src="components/angular-animate/angular-animate.min.js"></script>
+		<script src="js/app.js"></script>
+		
 	</body>
 </html>
