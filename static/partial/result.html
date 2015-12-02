@@ -24,12 +24,13 @@
 		padding-top: 25px;	
 	}
 	.main .image{
-		padding-right: 25px;
+		padding-right: 5px;
 		text-align: right;
 	}
 
 	.main .image img{
-		width: 170px;
+		width: 100%;
+		padding: 5px;
 		border-radius: 15px;
 		overflow: hidden;
 	}
@@ -42,7 +43,7 @@
 		color: rgb(51, 109, 152);
 	}
 	.item div:nth-child(2) {
-		font-size: 20px;
+		font-size: 18px;
 		color: rgb(90, 90, 90);
 	}
 
@@ -128,7 +129,7 @@
 			</div>
 			<div class="main">
 				<div class="image col-xs-6">
-					<img src="img/dog.png" alt="">
+					<img ng-src="{{data.image}}" alt="">
 				</div>
 				<div class="about col-xs-6">
 					<div class="item">
@@ -136,12 +137,8 @@
 						<div ng-bind="data.school">台北商業大學</div>
 					</div>
 					<div class="item">
-						<div>性別</div>	
-						<div ng-bind="data.gender">未知</div>	
-					</div>
-					<div class="item">
-						<div>專長興趣</div>
-						<div ng-bind="data.interest">最喜歡大家來摸摸我了</div>
+						<div>最近的困擾</div>
+						<div ng-bind="data.trouble">最喜歡大家來摸摸我了</div>
 					</div>
 				</div>
 				
