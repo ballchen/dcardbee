@@ -47,7 +47,7 @@ body {
 
 .prematch-wrapper{
 	position: relative;
-	margin-top: 15%;
+	margin-top: 10%;
 	text-align: center;
 	z-index: 1000;
 	-webkit-transition: all 0.3s;
@@ -70,6 +70,12 @@ body {
 .prematch-wrapper .title{
 	margin-bottom: 10px;
 	z-index: 1000;
+
+}
+
+
+.prematch-wrapper .title img{
+	padding: 5px;
 
 }
 

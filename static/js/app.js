@@ -19,6 +19,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',function
 }]);
 
 app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function($scope, $window, $timeout, $state){
+  $scope.data = data;
   $scope.loading = false;
 
 	$scope.select = function(){
@@ -31,7 +32,8 @@ app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function(
   $scope.share = function(){
     FB.ui({
       method: 'share',
-      href: 'https://apps.facebook.com/beedcard/',
+      href: 'https://apps.facebook.com/beedcard/?id=1'
+      // href: 'https://apps.facebook.com/beedcard/',
     }, function(response){});
   }
 }])

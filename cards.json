@@ -1,0 +1,18 @@
+[
+	{
+		"id": 0,
+		"name": "警衛室小黃1",
+		"image": "/img/dog.png",
+		"school": "台北商業大學",
+		"gender": "未知",
+		"interest": "最喜歡大家來摸摸我了"
+	},
+	{
+		"id": 1,
+		"name": "警衛室小黃2",
+		"image": "/img/dog.png",
+		"school": "台北商業大學",
+		"gender": "未知",
+		"interest": "最喜歡大家來摸摸我了"
+	}
+]

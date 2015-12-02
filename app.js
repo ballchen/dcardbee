@@ -11,6 +11,8 @@ const fs = require('fs')
 const ejs = require('ejs')
 const https = require('https')
 
+const cards = JSON.parse(fs.readFileSync('./cards.json'));
+
 app.use(ssl())
 
 // logger
@@ -22,25 +24,37 @@ app.use(function *(next) {
 })
 
 router.get('/', function*(){
+  const fate = Math.floor((Math.random() * cards.length));
   const template = fs.readFileSync(__dirname + '/views/index.html', 'utf-8')
-  this.body = ejs.render(template)
+  let option = {
+    card: cards[fate]
+  }
+  this.body = ejs.render(template, option)
 })
 
 router.get('/result', function*(){
+  const fate = Math.floor((Math.random() * cards.length));
   const template = fs.readFileSync(__dirname + '/views/index.html', 'utf-8')
-  this.body = ejs.render(template)
+  let option = {
+    card: cards[fate]
+  }
+  this.body = ejs.render(template, option)
 })
 
 router.post('/', function*(){
+  const fate = Math.floor((Math.random() * cards.length));
   const template = fs.readFileSync(__dirname + '/views/index.html', 'utf-8')
-  this.body = ejs.render(template)
+  let option = {
+    card: cards[fate]
+  }
+
+  this.body = ejs.render(template, option)
 })
 
 app.use(router.routes())
 app.use(require('koa-static')(__dirname + '/static'))
+
 // port
-
-
 var options = {
   key: fs.readFileSync('./config/key'),
   cert: fs.readFileSync('./config/server.crt')
