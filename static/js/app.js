@@ -1,5 +1,4 @@
 var app = angular.module('FBAPP', ['ui.router', 'ngAnimate']);
-var host = "localhost:3020"
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',function($stateProvider, $urlRouterProvider, $locationProvider) {
   	$stateProvider
