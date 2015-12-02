@@ -10,10 +10,10 @@ const _ = require('lodash')
 const fs = require('fs')
 const ejs = require('ejs')
 const https = require('https')
+const http = require('http')
 
 const cards = JSON.parse(fs.readFileSync('./cards.json'));
 
-app.use(ssl())
 
 // logger
 app.use(function *(next) {
@@ -65,13 +65,14 @@ app.use(router.routes())
 app.use(require('koa-static')(__dirname + '/static'))
 
 // port
-var options = {
-  key: fs.readFileSync('./config/key'),
-  cert: fs.readFileSync('./config/server.crt')
-}
+// var options = {
+//   key: fs.readFileSync('./config/key'),
+//   cert: fs.readFileSync('./config/server.crt')
+// }
 
 // app.listen(options, process.env.PORT || 3020, function(){
 //   console.log('Server start on Port: '+ (process.env.PORT || 3020));
 // })
 
-https.createServer(options, app.callback()).listen(3020);
+// https.createServer(options, app.callback()).listen(3020);
+http.createServer(app.callback()).listen(3020);
