@@ -31,11 +31,21 @@ app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function(
 	}
 
   $scope.share = function(){
-    FB.ui({
-      method: 'share',
-      href: 'https://openschool.dcard.tw/share?id='+$scope.data.id
-      // href: 'https://apps.facebook.com/beedcard/',
-    }, function(response){});
     ga('send', 'event', 'FB', 'share', 'sharebutton');
+    console.log(mobilecheck);
+    if(mobilecheck() == true) {
+      shareurl = "https://www.facebook.com/dialog/share?app_id=527914474040018&display=popup&href=https://openschool.dcard.tw/share?id="+$scope.data.id+"&redirect_uri=https://app.facebook.com/dcardwelcome";
+      window.open(shareurl);
+    }
+    else {
+      // Use new FB.ui share method
+      console.log('yo')
+      FB.ui({
+        method: 'share',
+        href: 'https://openschool.dcard.tw/share?id='+$scope.data.id
+        // href: 'https://apps.facebook.com/beedcard/',
+      }, function(response){});
+      
+    }
   }
 }])
