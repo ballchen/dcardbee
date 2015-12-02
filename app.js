@@ -65,10 +65,10 @@ app.use(router.routes())
 app.use(require('koa-static')(__dirname + '/static'))
 
 // port
-var options = {
-  key: fs.readFileSync('./config/key'),
-  cert: fs.readFileSync('./config/server.crt')
-}
+// var options = {
+//   key: fs.readFileSync('./config/key'),
+//   cert: fs.readFileSync('./config/server.crt')
+// }
 
 // app.listen(options, process.env.PORT || 3020, function(){
 //   console.log('Server start on Port: '+ (process.env.PORT || 3020));
