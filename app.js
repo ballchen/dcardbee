@@ -42,8 +42,8 @@ app.use(require('koa-static')(__dirname + '/static'))
 
 
 var options = {
-  key: fs.readFileSync('./key'),
-  cert: fs.readFileSync('./server.crt')
+  key: fs.readFileSync('./config/key'),
+  cert: fs.readFileSync('./config/server.crt')
 }
 
 // app.listen(options, process.env.PORT || 3020, function(){
