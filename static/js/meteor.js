@@ -1,6 +1,9 @@
 $(document).ready(function() {
   setTimeout(function(){
     var width = 820;
+    if(mobilecheck() == true){
+      width = 350;
+    }
     function newPos(w) {
       var rand = Math.floor(Math.random() * width + 1);
 
