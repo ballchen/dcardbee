@@ -27,6 +27,7 @@ app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function(
     $timeout(function() {
       $state.go('result');
     }, 1500);
+    ga('send', 'event', 'FB', 'play', 'playbutton');
 	}
 
   $scope.share = function(){
@@ -35,5 +36,6 @@ app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function(
       href: 'https://bee.ballchen.cc/share?id='+$scope.data.id
       // href: 'https://apps.facebook.com/beedcard/',
     }, function(response){});
+    ga('send', 'event', 'FB', 'share', 'sharebutton');
   }
 }])
