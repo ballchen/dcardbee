@@ -33,7 +33,7 @@ app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function(
   $scope.share = function(){
     FB.ui({
       method: 'share',
-      href: 'https://bee.ballchen.cc/share?id='+$scope.data.id
+      href: 'https://openschool.dcard.tw/share?id='+$scope.data.id
       // href: 'https://apps.facebook.com/beedcard/',
     }, function(response){});
     ga('send', 'event', 'FB', 'share', 'sharebutton');
