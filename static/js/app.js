@@ -1,4 +1,5 @@
 var app = angular.module('FBAPP', ['ui.router', 'ngAnimate']);
+var host = "localhost:3020"
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',function($stateProvider, $urlRouterProvider, $locationProvider) {
   	$stateProvider
@@ -32,7 +33,7 @@ app.controller('MainCtrl', ['$scope', '$window', '$timeout', '$state', function(
   $scope.share = function(){
     FB.ui({
       method: 'share',
-      href: 'https://apps.facebook.com/beedcard/?id=1'
+      href: 'https://bee.ballchen.cc/share?id='+$scope.data.id
       // href: 'https://apps.facebook.com/beedcard/',
     }, function(response){});
   }

@@ -41,6 +41,16 @@ router.get('/result', function*(){
   this.body = ejs.render(template, option)
 })
 
+router.get('/share', function*(){
+  let id = (this.query.id || 0)
+  let card = cards[id]
+  const template = fs.readFileSync(__dirname + '/views/share.html', 'utf-8')
+  let option = {
+    card: card
+  }
+  this.body = ejs.render(template, option)
+})
+
 router.post('/', function*(){
   const fate = Math.floor((Math.random() * cards.length));
   const template = fs.readFileSync(__dirname + '/views/index.html', 'utf-8')
